@@ -1,4 +1,4 @@
-package shortingalgorithms;
+package sorting;
 
 import java.util.Arrays;
 
