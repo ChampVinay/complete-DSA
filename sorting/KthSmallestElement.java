@@ -1,7 +1,14 @@
 package sorting;
 
-public class MergeSort {
-    // Main function that sorts an array using merge sort
+public class KthSmallestElement {
+    // Function to find the kth smallest element in an array
+    public static int kthSmallest(int[] arr, int k) {
+        // Sort the array using merge sort
+        mergeSort(arr);
+        // Return the kth smallest element (k-1 index)
+        return arr[k - 1];
+    }
+
     public static void mergeSort(int[] arr) {
         // Base case: if the array has less than 2 elements, it's already sorted
         if (arr.length < 2) {
@@ -30,7 +37,6 @@ public class MergeSort {
         merge(left, right, arr);
     }
 
-    // Function to merge two subarrays left[] and right[] into arr[]
     public static void merge(int[] left, int[] right, int[] arr) {
         int i = 0, j = 0, k = 0;
 
@@ -54,34 +60,24 @@ public class MergeSort {
         }
     }
 
-    // Main method to test the merge sort algorithm
+
     public static void main(String[] args) {
-        int[] arr = {38, 27,34,12,45,23,18,10,21,34}; // Example array to be sorted
-        mergeSort(arr);
+        int[] arr = {7, 10, 4, 3, 20, 15}; // Example array
+        int k = 5; // Find the 3rd smallest element
 
-        // Print the sorted array
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+        int result = kthSmallest(arr, k);
+        System.out.println(k + "th smallest element is " + result);
     }
-}
 
-/**
- * MergeSort Algorithm:
- * 
- * MergeSort is a divide-and-conquer algorithm that recursively divides the array
- * into two halves, sorts each half, and then merges the sorted halves back together.
- * 
- * Time Complexity:
- * - Best Case: O(n log n)
- * - Average Case: O(n log n)
- * - Worst Case: O(n log n)
- * 
- * Space Complexity:
- * - O(n): The algorithm requires additional space for the temporary arrays
- *   used during the merging process.
- * 
- * In-Place or Out-of-Place:
- * - MergeSort is an out-of-place algorithm because it requires additional
- *   memory to store the temporary arrays (left[] and right[]).
- */
+
+    /*
+     * Time Complexity: O(n log n) for sorting the array using merge sort
+     * Space Complexity: O(n) for the temporary arrays used in merge sort
+     * Note: The kth smallest element is found in O(1) time after sorting the array.
+     * This implementation is not optimal for large arrays, as it uses O(n) space for sorting.
+     * For large arrays, consider using a more efficient algorithm like Quickselect or a min-heap.
+     * For example, Quickselect has an average time complexity of O(n) and a space complexity of O(1).
+     * However, Quickselect has a worst-case time complexity of O(n^2) if the pivot is not chosen well.
+     * In practice, Quickselect is often faster than sorting the entire array, especially for large datasets.
+     */
+}

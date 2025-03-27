@@ -3,7 +3,7 @@ package sorting;
 import java.util.Arrays;
 
 /*
- * this is a selection short 
+ * this is a insertion short 
  * this is a inplace shorting algorithms
  * this is a  stable shorting algo
  * wrost case ,time complexity O(n^2)
