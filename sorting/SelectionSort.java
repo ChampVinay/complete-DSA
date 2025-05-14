@@ -6,7 +6,10 @@ import java.util.Scanner;
 /*
  * this sorting algorithm is called selection sort 
  * time complexity O(n^2)
- * space complexity O(1)
+ * space complexity O(1)5
+ * 
+ * this algorithm is not stable
+ * this algorithim is in place sorting algorithm
  */
 public class SelectionSort {
 
